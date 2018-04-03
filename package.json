@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "deep-merge": "^1.0.0",
+    "express": "4.10.2",
+    "express-basic-auth": "^1.1.4",
+    "express-fileupload": "0.3.0",
+    "extend": "*",
+    "forge": "^2.3.0",
+    "glob": "*",
+    "ldapauth-fork": "^4.0.2",
+    "morgan": "*",
+    "q": "*",
+    "sync-request": "^6.0.0",
+    "underscore": "^1.8.3",
+    "yamljs": "^0.3.0"
+  }
+}

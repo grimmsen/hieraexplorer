@@ -1,0 +1,67 @@
+<html ng-app="heApp">
+  <head>
+    <style>
+      .CodeMirror {
+        height: 88%;
+      }
+      .iconmenu {
+        color: white;
+        cursor: hand;
+      }
+      .bottom-sticky {
+        background-color: black;
+        z-index: 9999;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        padding: 0.3em;
+    }
+    </style>
+    <base href="/">
+    <title>Hieraexplorer</title>
+    <link href="css/uikit.min.css" rel="stylesheet" />
+    <link href="css/codemirror.min.css" rel="stylesheet" />
+    <link href="css/codemirror.vibrant-ink.css" rel="stylesheet" />
+    <script language="Javascript" src="js/jquery.min.js"></script>
+    <script language="Javascript" src="js/uikit.min.js"></script>
+    <script language="Javascript" src="js/uikit-icons.min.js"></script>
+    <script language="Javascript" src="js/angular.min.js"></script>
+    <script language="Javascript" src="js/angular-route.min.js"></script>
+    <script language="Javascript" src="js/angular-filter.min.js"></script>
+    <script language="Javascript" src="js/codemirror.min.js"></script>
+    <script language="Javascript" src="js/ui-codemirror.min.js"></script>
+    <script language="Javascript" src="js/codemirror.mode.yaml.js"></script>
+    <script language="Javascript" src="js/codemirror.mode.vim.js"></script>
+    <script language="Javascript" src="js/codemirror.mode.searchcursor.js"></script>
+    <script language="Javascript" src="js/codemirror.mode.dialog.js"></script>
+
+    <script language="Javascript" src="js/ng.config.js"></script>
+    <script language="Javascript" src="js/ng.c.index.js"></script>
+    <script language="Javascript" src="js/ng.c.editor.js"></script>
+  </head>
+  <body style="background-color:black">
+
+<div class="uk-section-primary uk-preserve-color">
+  <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <form class="uk-search uk-search-navbar uk-width-1-1" style="width:40em" ng-submit="changeHost()">
+          <input class="uk-search-input" ng-model="hostname" type="search" placeholder="Hostname..." width="40" style="width:100%;padding-left:1em">
+        </form>
+        <div style="margin-left:1em" uk-spinner ng-show="loading"></div> 
+       </div>
+      <div class="uk-navbar-right">
+        <style>.iconmenu { padding-right: 1em; }</style>
+        <a class="uk-navbar-item" title="Clone Git Repo"><span class="iconmenu" uk-icon="git-fork"></span>Clone Repo</a>
+        <a class="uk-navbar-item" title="Checkout Git Branch"><span class="iconmenu" uk-icon="git-branch"></span>Checkout Branch</a>
+        <a class="uk-navbar-item" title="Settings"><span class="iconmenu" uk-icon="settings"></span>Settings</a>
+        <a class="uk-navbar-item uk-logo">Hieraexplorer</a>
+      </div>
+    </nav>
+  </div>
+</div>
+<div ng-view></div>
+  </body>
+</html>
+    
+

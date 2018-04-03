@@ -1,0 +1,46 @@
+<style>
+  .CodeMirror {
+    height: 88%;
+  }
+  .iconmenu {
+    color: white;
+    cursor: hand;
+  }
+.bottom-sticky {
+  background-color: black;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 0.3em;
+}
+
+.vim-input {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-size: 1em;
+  outline: none;
+  border: 0px;
+}
+</style>
+<textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="content"></textarea>
+<div style="display:none;" ui-codemirror="{ onLoad : codemirrorLoaded }"></div>
+
+<div class="bottom-sticky">
+<span uk-toggle="target: #modal-example" class="uk-badge">{{filename}}</span>
+<span ng-click="save()" style="padding-left:1em" class="iconmenu" uk-icon="push" title="Save"></span>
+<span ng-click="update()" class="iconmenu" uk-icon="refresh" title="Reload from server"></span>
+<span class="uk-badge" style="background-color:GoldenRod" ng-click="togglemode()">vi mode {{vimCMD}}</span>
+<span class="vim-input" id="bottom-bar"></div>
+</div>
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">{{filename}}</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button">Save</button>
+        </p>
+    </div>
+</div>

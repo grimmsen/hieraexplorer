@@ -1,0 +1,43 @@
+<style>
+  .reset {
+  all: initial;
+  * {
+      all: unset;
+    }
+  }
+  .data {
+    border:0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    color: #fc0;
+  }
+  
+  .datalink {
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: 900;
+    cursor: hand;
+  }
+
+</style>
+<div style="padding-bottom:3em;height:88%;overflow-y:scroll;overflow-x:hidden">
+<table class="reset data" style="width:100%" ng-show="!loading">
+  <tr ng-repeat="line in lines | filter:filter" class="data" style="width:100%">
+    <td ng-repeat="(key,value) in line">
+<!--style="color:Khaki;border:0px;padding:2px;margin:0px;border-radius:0px;background-color:black"-->
+      <pre class="data" ng-if="key==='line'">{{value}}</pre>
+      <pre class="data datalink" ng-click="callEditor(value)" ng-if="key==='file'&&value!==null">{{value}}</pre>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div class="bottom-sticky">
+<form class="uk-search uk-search-navbar">
+                <span uk-search-icon></span>
+                <input ng-model="search" class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+</div>
