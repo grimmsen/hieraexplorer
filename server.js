@@ -28,9 +28,6 @@ const instance = function() {
   });
 
   conf = yaml.load("conf/hieraexplorer.yaml")['server'];
-  if(JSON.parse(conf.ssl)) {
-    console.log('SSL enabled');
-  }
 
   const REST = new rest(app,conf.api.path);
   REST.buildAPI(conf.api.register).applyCallMaps(); 
