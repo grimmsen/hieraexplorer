@@ -21,4 +21,4 @@ hieradata:
         - 'role/%{::zone}'
         - 'env/%{::env}'
         - common
-    path: data/hieradata
+    path: /data/hieradata
