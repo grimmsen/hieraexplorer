@@ -1,19 +1,6 @@
-auth:
-    type: none
-    file: data/users.yaml
-    ldap:
-        url: 'ldap://server'
-        bindDN: 'ou=bind,dc=company'
-        bindCredentials: password
-        searchBase: 'ou=users,dc=company'
-        searchFilter: '(sAMAccountName={{username}})'
 server:
     token: bla
     port: 8080
-    ssl: false
-    sslkey: data/conf/ssl.key
-    sslcert: data/conf/ssl.pem
-    guipath: /certs
     api:
         path: /api
         register:
@@ -35,8 +22,3 @@ hieradata:
         - 'env/%{::env}'
         - common
     path: data/hieradata
-    git:
-        enabled: false
-        url: 'ssh://git@github.com/hieraexample'
-        sshPrivKey: asdasd
-        sshPubKey: asdasd
