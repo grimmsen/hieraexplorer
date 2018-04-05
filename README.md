@@ -12,4 +12,4 @@ Set your host pattern and hierarchy in conf/hieraexplorer.yaml
 
 or
 
-```docker run -p 8080:8080 -v "$PWD/data:/data" -v $PWD/conf/hieraexplorer.yaml:/usr/src/app/conf/hieraexplorer.yaml hieraexplorer```
+```docker run -d -p 8080:8080 -v "$PWD/data:/data" -v $PWD/conf/hieraexplorer.yaml:/usr/src/app/conf/hieraexplorer.yaml hieraexplorer```
